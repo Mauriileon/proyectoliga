@@ -1,0 +1,137 @@
+/* ── fondo general ── */
+.root {
+    -fx-background-color: #f0f4ff;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 13px;
+}
+
+/* ── menú ── */
+.menu-bar {
+    -fx-background-color: #1565c0;
+    -fx-padding: 4 10 4 10;
+}
+.menu-bar .menu .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+.menu-bar .menu:hover,
+.menu-bar .menu:showing {
+    -fx-background-color: #1976d2;
+}
+.context-menu {
+    -fx-background-color: white;
+    -fx-border-color: #90caf9;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 8, 0, 0, 2);
+}
+.menu-item:hover {
+    -fx-background-color: #e3f2fd;
+}
+
+/* ── pestañas ── */
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: #e8f0fe;
+}
+.tab {
+    -fx-background-color: #e8f0fe;
+    -fx-padding: 6 20 6 20;
+    -fx-background-radius: 6 6 0 0;
+}
+.tab:selected {
+    -fx-background-color: #1565c0;
+}
+.tab .tab-label {
+    -fx-text-fill: #1565c0;
+    -fx-font-weight: bold;
+}
+.tab:selected .tab-label {
+    -fx-text-fill: white;
+}
+
+/* ── botones ── */
+.button {
+    -fx-background-color: #1565c0;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-padding: 7 20 7 20;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(21,101,192,0.3), 4, 0, 0, 2);
+}
+.button:hover {
+    -fx-background-color: #1976d2;
+}
+.button:pressed {
+    -fx-background-color: #0d47a1;
+    -fx-effect: none;
+}
+
+/* ── inputs ── */
+.text-field, .text-area {
+    -fx-background-color: white;
+    -fx-border-color: #90caf9;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 6 10 6 10;
+}
+.text-field:focused, .text-area:focused {
+    -fx-border-color: #1565c0;
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(gaussian, rgba(21,101,192,0.2), 6, 0, 0, 0);
+}
+
+/* ── combo ── */
+.combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #90caf9;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+}
+.combo-box:focused {
+    -fx-border-color: #1565c0;
+}
+.combo-box-popup .list-cell:hover {
+    -fx-background-color: #e3f2fd;
+}
+
+/* ── sliders ── */
+.slider .track {
+    -fx-background-color: #90caf9;
+    -fx-background-radius: 4;
+}
+.slider .thumb {
+    -fx-background-color: #1565c0;
+    -fx-background-radius: 50%;
+    -fx-effect: dropshadow(gaussian, rgba(21,101,192,0.4), 4, 0, 0, 1);
+}
+
+/* ── radio y checkbox ── */
+.radio-button .radio,
+.check-box .box {
+    -fx-border-color: #1565c0;
+    -fx-border-radius: 50%;
+}
+.radio-button:selected .dot {
+    -fx-background-color: #1565c0;
+}
+.check-box:selected .mark {
+    -fx-background-color: #1565c0;
+}
+
+/* ── labels ── */
+.label {
+    -fx-text-fill: #263238;
+}
+
+/* ── scroll ── */
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+.scroll-bar .thumb {
+    -fx-background-color: #90caf9;
+    -fx-background-radius: 4;
+}
