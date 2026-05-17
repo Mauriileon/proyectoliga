@@ -137,7 +137,7 @@ public class App extends Application {
         Menu mArchivo = new Menu("Archivo");
         MenuItem miNuevo = new MenuItem("Nuevo jugador");
 
-
+        
         miNuevo.setOnAction(e -> { tabPane.getSelectionModel().select(0); formJugador.limpiar(); });
         MenuItem miExportar = new MenuItem("Exportar listado...");
 
