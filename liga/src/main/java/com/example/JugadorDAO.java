@@ -34,7 +34,7 @@ public class JugadorDAO {
         }
     }
 
-    public static List<Jugador> listar() throws SQLException {
+    public static List<Jugador> listar() throws SQLException { 
         List<Jugador> lista = new ArrayList<>();
         String sql = "SELECT NIF_jugador, nombre, apellidos, DATE_FORMAT(fecha_nacimiento,'%Y-%m-%d'), " +
                 "club, sueldo, numero, posicion, goles, asistencias FROM JUGADOR";
