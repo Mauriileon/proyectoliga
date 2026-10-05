@@ -1,5 +1,4 @@
-2# Proyecto Liga
-
+# Proyecto Liga
 ## Descripción
 
 Este proyecto es una aplicación JavaFX para gestionar información
@@ -34,6 +33,15 @@ Para ejecutar el proyecto es necesario tener instalado:
 ## Instalación
 
 1. Clonar el repositorio:
+
+```bash
+git clone https://github.com/Mauriileon/proyectoliga.git
+cd proyectoliga
+```
+
+2. Abrir el proyecto en el IDE (IntelliJ IDEA o Eclipse) y configurar JavaFX.
+
+3. Ejecutar la clase principal de la aplicación.
 
 ```bash
 git clone URL_DEL_REPOSITORIO
