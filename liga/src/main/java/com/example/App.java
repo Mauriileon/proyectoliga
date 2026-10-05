@@ -27,7 +27,8 @@ public class App extends Application {
         stage.setTitle("Gestión de Jugadores");
 
         formJugador = new FormJugador();
-        formJugador.setOnGuardar(e -> guardarJugador());
+        formJugador.setOnGuardar(e -> 
+            guardarJugador());
 
         // pestaña formulario
         ScrollPane scroll = new ScrollPane(formJugador);
@@ -38,13 +39,17 @@ public class App extends Application {
         taListado = new TextArea();
         taListado.setEditable(false);
         Button btnActualizar = new Button("Actualizar");
-        btnActualizar.setOnAction(e -> actualizarListado());
+
+        btnActualizar.setOnAction(e -> 
+            actualizarListado());
+
+
         VBox vboxListado = new VBox(8, btnActualizar, taListado);
         vboxListado.setStyle("-fx-padding: 10;");
         VBox.setVgrow(taListado, Priority.ALWAYS);
         Tab tabListado = new Tab("Listado", vboxListado);
 
-        // pestaña buscar en internet (P5)
+        // pestaña buscar en internet 
         Tab tabApi = crearTabApi();
 
         tabPane = new TabPane();
@@ -89,7 +94,7 @@ public class App extends Application {
 
     private Tab crearTabApi() {
         TextField tfBusqueda = new TextField();
-        tfBusqueda.setPromptText("Título de la película...");
+        tfBusqueda.setPromptText("Nombre del Jugador...");
         TextArea taResult = new TextArea();
         taResult.setEditable(false);
         Label lblTitulo = new Label("Título: —");
@@ -99,14 +104,14 @@ public class App extends Application {
         btnBuscar.setOnAction(e -> {
             String url = "https://www.omdbapi.com/?t=" +
                          tfBusqueda.getText().trim().replace(" ", "+") +
-                         "&apikey=TU_CLAVE_AQUI";
+                         "&apikey=AIzaSyB81tGw2B4vCGeIsC_f7GuvmxrC1LBw1ns";
             try {
                 HttpClient client = HttpClient.newHttpClient();
                 HttpRequest req = HttpRequest.newBuilder().uri(URI.create(url)).GET().build();
                 String json = client.send(req, HttpResponse.BodyHandlers.ofString()).body();
                 taResult.setText(json);
                 if (json.contains("\"Response\":\"False\"")) {
-                    taResult.setText("Película no encontrada.");
+                    taResult.setText("Jugador no encontrado.");
                 } else {
                     lblTitulo.setText("Título: " + extraerJson(json, "Title"));
                     lblRating.setText("IMDb: "   + extraerJson(json, "imdbRating"));
@@ -138,26 +143,31 @@ public class App extends Application {
         MenuItem miNuevo = new MenuItem("Nuevo jugador");
 
         
-        miNuevo.setOnAction(e -> { tabPane.getSelectionModel().select(0); formJugador.limpiar(); });
+        miNuevo.setOnAction(e -> { 
+            tabPane.getSelectionModel().select(0); formJugador.limpiar(); });
         MenuItem miExportar = new MenuItem("Exportar listado...");
 
 
 
-        miExportar.setOnAction(e -> exportarFichero(stage));
+        miExportar.setOnAction(e -> 
+            exportarFichero(stage));
         MenuItem miImportar = new MenuItem("Importar listado...");
 
 
-        miImportar.setOnAction(e -> importarFichero(stage));
+        miImportar.setOnAction(e -> 
+            importarFichero(stage));
         MenuItem miSalir = new MenuItem("Salir");
 
 
-        miSalir.setOnAction(e -> Platform.exit());
+        miSalir.setOnAction(e -> 
+            Platform.exit());
         mArchivo.getItems().addAll(miNuevo, miExportar, miImportar, new SeparatorMenuItem(), miSalir);
 
         Menu mVer = new Menu("Ver");
         MenuItem miListado = new MenuItem("Listado");
 
-        miListado.setOnAction(e -> tabPane.getSelectionModel().select(1));
+        miListado.setOnAction(e -> 
+            tabPane.getSelectionModel().select(1));
         mVer.getItems().add(miListado);
 
         Menu mAyuda = new Menu("Ayuda");
